@@ -1,0 +1,18 @@
+
+<notes>
+
+    <note>
+        <to>George</to>
+        <from>John</from>
+        <heading>Reminder</heading>
+        <body>Don't forget the meeting!</body>
+    </note>
+
+
+    <note>
+        <to>George1</to>
+        <from>John1</from>
+        <heading>Reminder1</heading>
+        <body>Don't forget the meeting!1</body>
+    </note>
+</notes>

@@ -1,0 +1,11 @@
+target
+*.iml
+*.cmd
+mvnw
+.idea
+.DS_Store
+*.pyc
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
