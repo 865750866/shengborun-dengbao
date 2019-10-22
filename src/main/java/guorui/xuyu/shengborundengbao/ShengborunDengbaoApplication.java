@@ -8,7 +8,6 @@ public class ShengborunDengbaoApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ShengborunDengbaoApplication.class, args);
-
     }
 
 }
