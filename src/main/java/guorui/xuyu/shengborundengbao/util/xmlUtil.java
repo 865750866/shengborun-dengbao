@@ -36,9 +36,9 @@ public class xmlUtil {
 
     //保存文件方法,一般通过TransformerFactory转换工场进行转换为所需要的格式
     //设置保存格式,保存为我们需要的文件格式    
-    public static OutputStream saveDOM(Document document) throws TransformerConfigurationException, IOException {
+    public static StreamResult saveDOM(Document document) throws TransformerConfigurationException, IOException {
         try {
-            OutputStream outputStream=new ByteArrayOutputStream();
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             // 获得TransformerFactory转换工场
             TransformerFactory tff = TransformerFactory.newInstance();
             // 通过工场创建转换器
@@ -46,18 +46,22 @@ public class xmlUtil {
             // 设定转换格式
             tf.setParameter(OutputKeys.ENCODING, "UTF-8");
             // 设置换行
-            tf.setOutputProperty(OutputKeys.INDENT,"yes");
+            tf.setOutputProperty(OutputKeys.INDENT, "yes");
             // 拿到doc文件
             DOMSource source = new DOMSource(document);
             // 执行保存路径,如果保存路径和原来路径一样,覆盖原来文件
-            StreamResult srl = new StreamResult(outputStream);
+            StreamResult srl = new StreamResult(byteArrayOutputStream);
             // 保存
             tf.transform(source, srl);
+            // 返回
+            return srl;
         } catch (TransformerException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-}
+
+        return null;
+    }
 
 //    //向xml文件中添加元素
 //    public void addXML() throws TransformerConfigurationException {
@@ -84,4 +88,5 @@ public class xmlUtil {
 //        System.out.println("保存成功!");
 //
 //    }
+}
 

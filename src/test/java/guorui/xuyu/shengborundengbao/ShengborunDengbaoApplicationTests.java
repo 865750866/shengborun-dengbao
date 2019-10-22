@@ -15,9 +15,7 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.StringWriter;
+import java.io.*;
 
 @SpringBootTest
 class ShengborunDengbaoApplicationTests {
@@ -53,11 +51,16 @@ class ShengborunDengbaoApplicationTests {
         transformer.transform(new DOMSource(do1), new StreamResult(stringWriter));
         System.out.println(stringWriter.toString());
 
+        try {
+            StreamResult r=xmlUtil.saveDOM(do1);
 
+            System.out.println("aa");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-
-
-
+        BufferedOutputStream b=new BufferedOutputStream();
+        StringReader reader;
 
 
     }
